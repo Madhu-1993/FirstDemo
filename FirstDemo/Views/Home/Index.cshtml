@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Html.ActionLink("Privacy Page","Privacy","Home")
+<a href="Home/Privacy">Privacy page</a>
+
+<h1>Home Page</h1>
+
+<form>
+    <input type="text" name="fullname"/>
+    <input tyep="submit" value="Add"/>
+</form>
+
+@using(Html.BeginForm())
+{
+    @Html.TextBox("name")
+    <input type="submit" value="Add"/>
+}
+
+
+<h4>@TempData["message"]</h4>
+<h4>@ViewData["message"]</h4>
+
+@if(ViewData["Colors"]!=null)
+{
+    <ol>
+        @foreach(string color in (IEnumerable<string>)ViewData["Colors"])
+            {
+                <li>
+                    @color
+                </li>
+            }
+    </ol>
+}
+else
+{
+    <p>
+        List is not available
+    </p>
+}
+
+<h4>List using ViewBag</h4>
+<ol>
+    @foreach (string color in ViewBag.Colors )
+    {
+       <li>
+            @color
+      </li>
+    }
+    </ol>
+

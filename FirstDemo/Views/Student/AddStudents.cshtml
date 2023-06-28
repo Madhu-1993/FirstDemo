@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "AddStudents";
+}
+
+<h1>Add Students</h1>
+
+<form asp-action="AddStudents">
+    <table>
+        <tr>
+            <th>Enter the roll no</th>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <th>Enter your Name</th>
+            <td>
+                @Html.TextBox("fullname")
+            </td>
+        </tr>
+        <tr>
+            <th>Enter your Address</th>
+            <td>
+                @Html.TextBox("address")
+            </td>
+        </tr>
+        <tr>
+            <th>Select Gender</th>
+            <td>
+                @Html.RadioButton("gender","Male")
+                @Html.RadioButton("gender","Female")
+            </td>
+        </tr>
+        <tr>
+            <th>Select City</th>
+            <td>
+                @Html.DropDownList("options")
+                </td>
+                <tr>
+                    <th></th>
+                    <td>
+                        <input typr="submit" value="Save"/>
+                    </td>
+                </tr>
+            </td>
+        </tr>
+    </table>
+
+</form>
